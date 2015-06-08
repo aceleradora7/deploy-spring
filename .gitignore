@@ -3,7 +3,6 @@ deploy_spring.ipr
 deploy_spring.iws
 
 .gradle/
-gradle/
 build/
 
 *.class
