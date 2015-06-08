@@ -36,6 +36,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.4'
 }
 
-task oi(){
-    println "oi"
+
+task stage(){
+    from jar.archivePath
+    into project.rootDir
+    rename{
+        'deploy-spring.jar'
+    }
+}
+
+stage.mustRunAfter(clean)
+
+task clean << {
+    project.file('deploy-spring.jar').delete()
 }
