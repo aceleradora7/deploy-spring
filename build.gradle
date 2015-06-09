@@ -37,7 +37,7 @@ task wrapper(type: Wrapper) {
 }
 
 
-task stage(){
+task stage(type: Copy, dependsOn: [clean, build]){
     from jar.archivePath
     into project.rootDir
     rename{
@@ -47,6 +47,6 @@ task stage(){
 
 stage.mustRunAfter(clean)
 
-task clean << {
+clean << {
     project.file('deploy-spring.jar').delete()
 }
