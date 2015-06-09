@@ -6,4 +6,4 @@ deploy_spring.iws
 build/
 
 *.class
-
+deploy-spring.jar
