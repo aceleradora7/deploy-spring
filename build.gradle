@@ -32,9 +32,9 @@ dependencies {
     testCompile("junit:junit")
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.4'
-}
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '2.4'
+//}
 
 
 task stage(type: Copy, dependsOn: [clean, build]){
