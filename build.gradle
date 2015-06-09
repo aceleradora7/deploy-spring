@@ -8,7 +8,6 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
-        classpath("org.gradle.api.plugins:gradle-heroku:0.9.6")
     }
 }
 
@@ -21,8 +20,8 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web") {
@@ -34,11 +33,11 @@ dependencies {
 }
 
 task wrapper(type:Wrapper) {
-    gradleVersion = '2.4'
+    gradleVersion = '1.6'
 }
 
 
-task stage(type: Copy, dependsOn: [clean, build]){
+task stage(type: Copy, dependsOn: [wrapper, clean, build]){
     from jar.archivePath
     into project.rootDir
     rename{
