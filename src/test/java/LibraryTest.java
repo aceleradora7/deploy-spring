@@ -1,5 +1,11 @@
-/**
- * Created by dojo on 08/06/15.
- */
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
 public class LibraryTest {
+
+    @Test
+    public void test(){
+        assertTrue(true);
+    }
 }
